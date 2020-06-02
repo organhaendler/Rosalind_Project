@@ -4,8 +4,8 @@
 def input_is_int():
     while True:
         try:
-            user_input = int(input("Enter an integer smaller 1000:"))
-            if user_input > 999:
+            user_input = int(input("Enter an integer smaller 10000:"))
+            if user_input > 9999:
                 print("This number is not smaller 1000!")
                 continue
         except:
@@ -15,15 +15,15 @@ def input_is_int():
 
 def check_if_a_is_smaller_b(a, b):
     if a<b:
-        print("check if a smaller b loopcheck")
+        print("Input is OK!")
     else:
         print("The first value needs to be smaller than the second one!")
         main()
 
 def calculate_sum_of_odds(a, b):
     sum_of_odds = 0
-    for i in range(a, b):
-        if i%2:
+    for i in range(a, b+1):
+        if i%2 == 1:
             sum_of_odds= sum_of_odds + i
     return sum_of_odds
 
