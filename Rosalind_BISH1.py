@@ -2,21 +2,20 @@
 # Return: Four integers (separated by spaces) counting the respective number of times that the
 #     symbols 'A', 'C', 'G', and 'T' occur in s.
 
-sample_data = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
-A = int()
-G = int()
-C = int()
-T = int()
+def element_count_in_dict(set):
+    element_count = {}
+    for element in set:
+        if element in element_count:
+            element_count[element] = element_count[element] + 1
+        else:
+            element_count[element] = 1
+    return element_count
 
-for i in sample_data:
-    if i == "A":
-        A += 1
-    elif i == "G":
-        G += 1
-    elif i == "C":
-        C += 1
-    elif i == "T":
-        T += 1
+def main():
+    sample_data = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
+    base_count = element_count_in_dict(sample_data)
+    for x,y in base_count.items():
+        print(x,y)
 
-print(A, T, G, C)
-# Could have used dictionary like in INI6. Rework when there is time.
+if __name__ == 'main':
+    main()

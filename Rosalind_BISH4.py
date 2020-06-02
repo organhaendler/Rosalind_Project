@@ -19,23 +19,26 @@
 #     months, if we begin with 1 pair and in each generation, every pair of reproduction-age rabbits
 #     produces a litter of k rabbit pairs (instead of only 1 pair).
 
-number_of_generations = int(input("Please enter the number of generations after which the"
-                                  "population of fibonacci rabbits will be calculated:"))
-number_of_offspring = int(input("Please enter the number of offspring a pair of rabbits "
-                                "produces:"))
+def main():
+    number_of_generations = int(input("Please enter the number of generations after which the"
+                                      "population of fibonacci rabbits will be calculated:"))
+    number_of_offspring = int(input("Please enter the number of offspring a pair of rabbits "
+                                    "produces:"))
 
-# Define the initial variables for F1 = F2 = 1. Iterator i starts at F3.
-f_n = number_of_offspring + 1
-f_n_minus_two = 1
-f_n_minus_one = 1
-i = 3
+    # Define the initial variables for F1 = F2 = 1. Iterator i starts at F3.
+    f_n = number_of_offspring + 1
+    f_n_minus_one = 1
+    i = 3
 
-# Calculate population size after number_of_generation.
-while i<number_of_generations:
-    f_n_temp = f_n
-    f_n = f_n_minus_one * number_of_offspring + f_n
-    f_n_minus_one = f_n_temp
-    i += 1
+    # Calculate population size after number_of_generation.
+    while i<number_of_generations:
+        f_n_temp = f_n
+        f_n = f_n_minus_one * number_of_offspring + f_n
+        f_n_minus_one = f_n_temp
+        i += 1
 
-print(f'After {number_of_generations} generations of rabbits with {number_of_offspring} '
-      f'progenies per pair, the population size is {f_n}.')
+    print(f'After {number_of_generations} generations of rabbits with {number_of_offspring} '
+          f'progenies per pair, the population size is {f_n}.')
+
+if __name__ == '__main__':
+    main()

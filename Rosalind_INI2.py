@@ -13,13 +13,15 @@ def user_input_is_int():
         else:
             return side_length
 
-
 def calculate_hypothenuse_square(a, b,):
     c_square = a**2 + b**2
     return c_square
 
+def main():
+    a = user_input_is_int()
+    b = user_input_is_int()
+    c_square = calculate_hypothenuse_square(a, b)
+    print(f'The square of the hypothenuse is {c_square}')
 
-a = user_input_is_int()
-b = user_input_is_int()
-c_square = calculate_hypothenuse_square(a, b)
-print(c_square)
+if __name__ == '__main__':
+    main()

@@ -3,12 +3,14 @@
 #     inclusively. In other words, we should include elements s[b] and s[d] in our slice.
 # Sample Dataset: Rosalind_INI2.2_ExampleData.txt
 
-with open("Rosalind_INI3_ExampleData.txt") as fh:
-    example_data = fh.readlines()
+def main():
+    with open("Rosalind_INI3_ExampleData.txt") as fh:
+        example_data = fh.readlines()
+    example_string = example_data[0]
+    example_values = example_data[1].split()
+    solutions = [example_string[int(example_values[0]):int(example_values[1])+1],
+                example_string[int(example_values[2]):int(example_values[3])+1]]
+    print(solutions)
 
-example_string = example_data[0]
-example_values = example_data[1].split()
-solutions = [example_string[int(example_values[0]):int(example_values[1])+1],
-            example_string[int(example_values[2]):int(example_values[3])+1]]
-
-print(solutions)
+if __name__ == '__main__':
+    main()
